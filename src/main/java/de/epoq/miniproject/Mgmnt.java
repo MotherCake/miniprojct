@@ -6,8 +6,6 @@ import javax.naming.NamingException;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import oracle.toplink.essentials.config.HintValues;
-import oracle.toplink.essentials.config.TopLinkQueryHints;
 
 @Stateless(name = "Mgmnt", mappedName = "ejb/Mgmnt")
 public class Mgmnt implements IMgmnt
