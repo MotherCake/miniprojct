@@ -17,9 +17,9 @@ public class Mgmnt implements IMgmnt
 	@Override
 	public List<EntityFoo> getEntityFoos(final long id) throws NamingException
 	{
-		final Query q = em.createNativeQuery("SELECT * FROM minitable where id = " + id);
-		//		final Query q = em.createQuery("SELECT x FROM EntityFoo x where x.id = :id");
-		//		q.setParameter("id", id);
+		//		final Query q = em.createNativeQuery("SELECT * FROM minitable where id = " + id);
+		final Query q = em.createQuery("SELECT x FROM EntityFoo x where x.id = :id");
+		q.setParameter("id", id);
 
 		final List<EntityFoo> campaigns = q.getResultList();
 		return campaigns;

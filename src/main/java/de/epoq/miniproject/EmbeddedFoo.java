@@ -1,6 +1,7 @@
 package de.epoq.miniproject;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -12,9 +13,10 @@ public class EmbeddedFoo implements Serializable
 		VALUEA, VALUEB
 	}
 
-	private EnumBar enumBar;
-
+	@Column(name = "enumbar")
 	@Enumerated(EnumType.STRING)
+	public EnumBar enumBar;
+
 	public EnumBar getEnumBar()
 	{
 		return enumBar;

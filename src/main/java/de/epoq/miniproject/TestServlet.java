@@ -37,12 +37,11 @@ public class TestServlet extends HttpServlet
             InitialContext iCtx = new InitialContext();
             mgmnt = (IMgmnt) iCtx.lookup("java:global/miniproject-1.0-SNAPSHOT/Mgmnt!de.epoq.miniproject.IMgmnt");
             
-            List<EntityFoo> entityFoos = mgmnt.getEntityFoos(1);
-            
+            List<EntityFoo> entityFoos = mgmnt.getEntityFoos(0);
             if(entityFoos.size()>0)
             {
                 EntityFoo foo = (EntityFoo)entityFoos.get(0);
-                out.println(foo.getEmbeddedFoo());
+                out.println(foo.getEmbeddedFoo().getEnumBar());
             }
         }
     }

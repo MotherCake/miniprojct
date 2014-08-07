@@ -1,6 +1,8 @@
 package de.epoq.miniproject;
 
 import java.io.Serializable;
+import javax.persistence.AttributeOverride;
+import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -14,6 +16,7 @@ public class EntityFoo implements Serializable
 	public Integer id;
 
 	@Embedded
+	@AttributeOverride(name = "enumBar", column = @Column(name = "enumbar"))
 	private EmbeddedFoo embeddedFoo;
 
 	public Integer getId()
