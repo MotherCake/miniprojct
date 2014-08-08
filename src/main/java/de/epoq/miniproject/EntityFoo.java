@@ -12,18 +12,18 @@ import javax.persistence.Table;
 @Table(name = "minitable")
 public class EntityFoo implements Serializable
 {
-	@Id
 	public Integer id;
 
-	@Embedded
-	@AttributeOverride(name = "enumBar", column = @Column(name = "enumbar"))
+	//	@AttributeOverride(name = "enumBar", column = @Column(name = "enumbar"))
 	private EmbeddedFoo embeddedFoo;
 
+	@Id
 	public Integer getId()
 	{
 		return id;
 	}
 
+	@Embedded
 	public EmbeddedFoo getEmbeddedFoo()
 	{
 		return embeddedFoo;
